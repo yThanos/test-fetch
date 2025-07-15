@@ -16,10 +16,11 @@ const test = () => {
     })
 
     console.log("Before GET")
-    dog.get('/get', {params: {"test": "true", "list": ['aaa', 'bbb', 'ccc']}, headers: {"api-key": "12345"}})
+    const getExample = dog.get('/get', {params: {"test": "true", "list": ['aaa', 'bbb', 'ccc']}, headers: {"api-key": "12345"}})
     .then((res)=>console.log(res))
-    .error((err)=>console.log(err))
-    .call();
+    .error((err)=>console.log(err));
+
+    getExample.call();
 
     console.log("Before POST")
     dog.post('/post', {whatever: "some_value", otherField: 'OTHER_VALUE'}, {headers: {"Content-Type": "application/json"}})
